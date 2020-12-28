@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  ebanking_api:
+    build: .
+    container_name: ebanking_api
+    command: ["python", "run.py"]
+    volumes:
+    - .:/code
+    ports:
+    - "8080:8080"

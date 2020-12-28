@@ -31,4 +31,25 @@ class UserView(BaseView):
     SUPPORTED_METHODS = ["GET"]
 
     async def get(self):
+        """
+            ---
+            tags:
+              - Users
+            summary: List users
+            description: List all users in feed
+            operationId: getUser
+            responses:
+                '200':
+                  description: A list of users
+                  content:
+                    application/json:
+                      schema:
+                        $ref: '#/components/schemas/UserModel'
+                    application/xml:
+                      schema:
+                        $ref: '#/components/schemas/UserModel'
+                    text/plain:
+                      schema:
+                        type: string
+        """
         self.send_response({"user": "George Ricardo"})
